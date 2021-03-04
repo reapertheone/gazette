@@ -1,0 +1,38 @@
+body{
+    margin:0;
+    padding:0;
+}
+
+#mapid{
+    margin:0;
+    padding:0;
+    height:800px;
+    width:100%;
+}
+
+ul.search{
+    width:auto;
+    margin-left:auto;
+    margin-right:auto;
+    padding-left:0;
+}
+
+ul.search>li{
+    list-style-type: none;
+    width:auto;
+    
+}
+
+ul.search>li:hover{
+    background-color: cornflowerblue;
+}
+
+ul{
+    margin-left:0;
+    padding-left:0;
+    list-style-type: none;
+}
+
+.row,.row>div{
+    margin-top:15px;
+}
