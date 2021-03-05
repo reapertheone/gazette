@@ -20,8 +20,9 @@
     <title>Codename: Gazetteer</title>
 </head>
 <body>
-<div class="mt-3 container text-center"><select onchange=countrySelectorChange id="country">
-    <option selected value="none">Choose one</option>
+
+<div id="selector"><select class="shadow" id="country">
+    <option  selected value="none">Choose one</option>
 </select></div>
 
 <div id="result" style="display:none" class="container-fluid hidden text-dark">
@@ -47,7 +48,10 @@
 
 
 
-<div class="mt-3" id="mapid"></div>
+
+<div id="mapid">
+</div>
+
 <script src="https://code.jquery.com/ui/1.8.23/jquery-ui.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin="anonymous"></script>
     
