@@ -59,6 +59,13 @@ $decode = json_decode($result,true);
     $output['data']['covidCases']=$last;
 
 
+    $result=file_get_contents('../data/countryBorders.geo.json');
+
+    $decode=json_decode($result,true);
+
+    $output['data']['feature']=$decode['features'][$_REQUEST['dataIndex']];
+
+
     $url="https://restcountries.eu/rest/v2/alpha/" . $output['data']['countryCode'];
     $ch = curl_init();
     curl_setopt($ch, CURLOPT_SSL_VERIFYPEER, false);

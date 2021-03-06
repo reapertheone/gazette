@@ -9,7 +9,9 @@ let countrySelector=$('#country')
 countrySelector.on('change',(event)=>{
     let current=event.target.options[event.target.selectedIndex]
     mymap.setView([current.getAttribute('lat'),current.getAttribute('lng')],5)
-    clickHandler(event,current.getAttribute('lat'),current.getAttribute('lng'))
+    clickHandler(event,current.getAttribute('lat'),current.getAttribute('lng'),current.getAttribute('data-index'))
+    console.log(currentPoly)
+    typeof currentPoly=="undefined"? console.log('nothing to do'):mymap.removeLayer(currentPoly)
 
     console.log(current)
 })
@@ -70,7 +72,7 @@ const clickHandlerWrapper=(e)=>{
 }
 
 
-
+let currentPoly
 
 
 
@@ -79,7 +81,7 @@ type: 'POST',
 dataType: 'json',
 success: (res)=>{
     let features=res.features
-    features.forEach(feature => {
+    features.forEach((feature,key) => {
         let select=document.querySelector('#country')
         let option=document.createElement('option')
         let {lat,lng}=L.geoJSON(feature).getBounds().getCenter()
@@ -89,12 +91,13 @@ success: (res)=>{
 
         option.setAttribute('lat',lat)
         option.setAttribute('lng',lng)
+        option.setAttribute('data-index',key)
         option.innerHTML=feature.properties.name
         select.appendChild(option)
 
-        L.geoJSON(feature).addEventListener('click',clickHandlerWrapper).addTo(mymap)
+       // L.geoJSON(feature).addEventListener('click',clickHandlerWrapper).addTo(mymap)
 
-
+        
        console.log(lat,lng)
     });
 },
@@ -102,8 +105,9 @@ error:(err)=>{console.log(err)}
 
 })
 
-    const clickHandler=(e,lat,lng)=>{
+    const clickHandler=(e,lat,lng,dataIndex)=>{
         //console.log('asd')
+        
         let infoDiv=document.querySelector('#info')
         let $resultDiv=$('#result')
         let list=document.querySelector('#info>ul')
@@ -120,7 +124,7 @@ error:(err)=>{console.log(err)}
             type: 'POST',
             dataType: 'json',
             data:{
-                lat,lng
+                lat,lng,dataIndex
             },success: (res)=>{
                 //console.log(res)
                 if(res.status.name==='ok'){
@@ -157,6 +161,9 @@ error:(err)=>{console.log(err)}
 
                 li=document.createElement('li')
                 li.innerHTML=`flag: <img width="50" height="30" src=${data.flag}>`
+                currentPoly=L.geoJSON(data.feature)
+                currentPoly.addEventListener('click',clickHandlerWrapper).addTo(mymap)
+                mymap.fitBounds(currentPoly.getBounds())
                 list.appendChild(li)
                 console.log(data)
                 
