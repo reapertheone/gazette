@@ -52,11 +52,11 @@ $decode = json_decode($result,true);
 
     $decode= json_decode($result,true);
     //echo json_encode($decode);
-    $last= end($decode);
+    //$last= end($decode);
     //echo $last;
     //print_r($decode[$last-1]);
     //echo json_encode($last);
-    $output['data']['covidCases']=$last;
+    $output['data']['covidCases']=$decode;
 
 
     $result=file_get_contents('../data/countryBorders.geo.json');

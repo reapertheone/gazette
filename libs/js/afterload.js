@@ -156,7 +156,7 @@ error:(err)=>{console.log(err)}
                 li.innerHTML=`Country population:<strong> ${data.population}</strong>`
                 list.appendChild(li)
                 li=document.createElement('li')
-                li.innerHTML=`Latest Covid-19 cases:<strong> ${data.covidCases?data.covidCases.Cases:'N/A'}</strong>`
+                li.innerHTML=`Latest Covid-19 cases:<strong> ${data.covidCases?data.covidCases[data.covidCases.length-1].Cases:'N/A'}</strong>`
                 list.appendChild(li)
 
                 li=document.createElement('li')
