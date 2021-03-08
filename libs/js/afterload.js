@@ -1,4 +1,13 @@
 let mymap=L.map('mapid');
+L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
+        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
+        maxZoom: 18,
+        minZoom:2,
+        id: 'mapbox/streets-v11',
+        tileSize: 512,
+        zoomOffset: -1,
+        accessToken: 'pk.eyJ1IjoidHV0cmFpZ2VyZ28iLCJhIjoiY2tsaWJnank0MXU0MzJ3cDcxNzhtMTRjdSJ9.NDJrMBXj7_3uu-D1TKCRdw'
+    }).addTo(mymap);
 
 const countrySelectorChange=(e)=>{
     console.log(e.target)
@@ -29,15 +38,7 @@ window.navigator.geolocation.getCurrentPosition((value)=>{
    // console.log(latitude,longitude)
 
     mymap.setView([latitude,longitude], 5)
-    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-        maxZoom: 18,
-        minZoom:2,
-        id: 'mapbox/streets-v11',
-        tileSize: 512,
-        zoomOffset: -1,
-        accessToken: 'pk.eyJ1IjoidHV0cmFpZ2VyZ28iLCJhIjoiY2tsaWJnank0MXU0MzJ3cDcxNzhtMTRjdSJ9.NDJrMBXj7_3uu-D1TKCRdw'
-    }).addTo(mymap);
+    
 
     let marker1=L.marker([latitude,longitude],{icon:new L.Icon({iconUrl:'thunder.png',iconSize:[38,50]})})
 
@@ -47,15 +48,7 @@ window.navigator.geolocation.getCurrentPosition((value)=>{
 
     mymap.setView([0,1], 2);
 
-    L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_token={accessToken}', {
-        attribution: 'Map data &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, Imagery © <a href="https://www.mapbox.com/">Mapbox</a>',
-        maxZoom: 18,
-        minZoom:2,
-        id: 'mapbox/streets-v11',
-        tileSize: 512,
-        zoomOffset: -1,
-        accessToken: 'pk.eyJ1IjoidHV0cmFpZ2VyZ28iLCJhIjoiY2tsaWJnank0MXU0MzJ3cDcxNzhtMTRjdSJ9.NDJrMBXj7_3uu-D1TKCRdw'
-    }).addTo(mymap);
+   
 
     //let marker=L.marker([latitude,longitude],{icon:new L.Icon({iconUrl:'thunder.png',iconSize:[38,50]})})
 
