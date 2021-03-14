@@ -92,6 +92,7 @@ let currentPoly;
         infoDiv.appendChild(h1)
        
         infoDiv.appendChild(select)
+        infoDiv.innerHTML+='<br>'
         
         let source=document.createElement('source')
         source.src=radioList[select.value].uri
