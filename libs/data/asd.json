@@ -1,0 +1,462 @@
+{
+    "data": {
+        "countryCode": "HU",
+        "geometry": {
+            "type": "Polygon",
+            "coordinates": [
+                [
+                    [
+                        16.202298211337364,
+                        46.85238597267696
+                    ],
+                    [
+                        16.534267612380376,
+                        47.49617096616912
+                    ],
+                    [
+                        16.340584344150415,
+                        47.71290192320123
+                    ],
+                    [
+                        16.90375410326726,
+                        47.71486562762833
+                    ],
+                    [
+                        16.979666782304037,
+                        48.123497015976305
+                    ],
+                    [
+                        17.48847293464982,
+                        47.86746613218621
+                    ],
+                    [
+                        17.857132602620027,
+                        47.758428860050365
+                    ],
+                    [
+                        18.696512892336926,
+                        47.880953681014404
+                    ],
+                    [
+                        18.77702477384767,
+                        48.081768296900634
+                    ],
+                    [
+                        19.17436486173989,
+                        48.11137889260387
+                    ],
+                    [
+                        19.661363559658497,
+                        48.26661489520866
+                    ],
+                    [
+                        19.769470656013112,
+                        48.202691148463614
+                    ],
+                    [
+                        20.239054396249347,
+                        48.32756724709692
+                    ],
+                    [
+                        20.473562045989866,
+                        48.56285004332181
+                    ],
+                    [
+                        20.801293979584926,
+                        48.623854071642384
+                    ],
+                    [
+                        21.872236362401736,
+                        48.31997081155002
+                    ],
+                    [
+                        22.08560835133485,
+                        48.42226430927179
+                    ],
+                    [
+                        22.640819939878753,
+                        48.15023956968735
+                    ],
+                    [
+                        22.710531447040495,
+                        47.88219391538941
+                    ],
+                    [
+                        22.099767693782834,
+                        47.6724392767167
+                    ],
+                    [
+                        21.62651492685387,
+                        46.99423777931816
+                    ],
+                    [
+                        21.02195234547125,
+                        46.3160879583519
+                    ],
+                    [
+                        20.220192498462836,
+                        46.127468980486555
+                    ],
+                    [
+                        19.596044549241583,
+                        46.17172984474454
+                    ],
+                    [
+                        18.82983808764996,
+                        45.90887767189193
+                    ],
+                    [
+                        18.45606245288286,
+                        45.759481106136136
+                    ],
+                    [
+                        17.630066359129557,
+                        45.95176911069419
+                    ],
+                    [
+                        16.8825150895953,
+                        46.38063182228444
+                    ],
+                    [
+                        16.564808383864857,
+                        46.50375092221983
+                    ],
+                    [
+                        16.370504998447416,
+                        46.8413272161665
+                    ],
+                    [
+                        16.202298211337364,
+                        46.85238597267696
+                    ]
+                ]
+            ]
+        },
+        "name": "Hungary",
+        "LatLng": [
+            47,
+            20
+        ],
+        "flag": "https:\/\/restcountries.eu\/data\/hun.svg",
+        "capital": {
+            "name": "Budapest",
+            "coords": {
+                "lon": 19.0399,
+                "lat": 47.498
+            }
+        },
+        "currency": "HUF",
+        "temperature": 10.52,
+        "exchangeRate": 306.92,
+        "wiki": "https:\/\/en.wikipedia.org\/wiki\/Hungary",
+        "radios": [
+            {
+                "name": "R\u00e1di\u00f3 1",
+                "uri": "http:\/\/stream.radio1.hu:8000\/mid.mp3",
+                "image_url": "https:\/\/mypromotions.sfo2.cdn.digitaloceanspaces.com\/radios\/62839.jpg"
+            },
+            {
+                "name": "Retro R\u00e1di\u00f3",
+                "uri": "http:\/\/stream1.retroradio.hu\/high.mp3.m3u",
+                "image_url": "https:\/\/mypromotions.sfo2.cdn.digitaloceanspaces.com\/radios\/52658.jpg"
+            },
+            {
+                "name": "Petofi R\u00e1di\u00f3",
+                "uri": "https:\/\/icast.connectmedia.hu\/4738\/mr2.mp3",
+                "image_url": "https:\/\/mypromotions.sfo2.cdn.digitaloceanspaces.com\/radios\/730.jpg"
+            },
+            {
+                "name": "Klubradio",
+                "uri": "http:\/\/stream.klubradio.hu:8080\/bpstream",
+                "image_url": "https:\/\/mypromotions.sfo2.cdn.digitaloceanspaces.com\/radios\/25615.jpg"
+            },
+            {
+                "name": "Sl\u00e1ger FM",
+                "uri": "http:\/\/92.61.114.159:7812\/slagerfm128.mp3",
+                "image_url": "https:\/\/mypromotions.sfo2.cdn.digitaloceanspaces.com\/radios\/64126.jpg"
+            },
+            {
+                "name": "MegaDance",
+                "uri": "http:\/\/megadanceradio.hopto.org:8000\/livemega.mp3.m3u",
+                "image_url": "https:\/\/mypromotions.sfo2.cdn.digitaloceanspaces.com\/radios\/27949.jpg"
+            },
+            {
+                "name": "Kossuth R\u00e1di\u00f3",
+                "uri": "https:\/\/icast.connectmedia.hu\/4736\/mr1.mp3",
+                "image_url": "https:\/\/mypromotions.sfo2.cdn.digitaloceanspaces.com\/radios\/40632.jpg"
+            },
+            {
+                "name": "Jazzy 90.9 FM",
+                "uri": "http:\/\/94.199.183.186\/jazzy.mp3",
+                "image_url": "https:\/\/mypromotions.sfo2.cdn.digitaloceanspaces.com\/radios\/39026.jpg"
+            },
+            {
+                "name": "Rise FM",
+                "uri": "http:\/\/stream.radioszerver.com\/risefm",
+                "image_url": "https:\/\/mypromotions.sfo2.cdn.digitaloceanspaces.com\/radios\/37268.jpg"
+            },
+            {
+                "name": "Luxfunk Dance",
+                "uri": "http:\/\/188.165.11.30:5000\/luxfunkdance.mp3",
+                "image_url": "https:\/\/mypromotions.sfo2.cdn.digitaloceanspaces.com\/radios\/856.jpg"
+            },
+            {
+                "name": "Best FM Debrecen",
+                "uri": "http:\/\/stream.webthings.hu:8000\/fm95-x-128.mp3",
+                "image_url": "https:\/\/mypromotions.sfo2.cdn.digitaloceanspaces.com\/radios\/28588.jpg"
+            },
+            {
+                "name": "Best FM Budapest",
+                "uri": "http:\/\/stream1.bestfmbudapest.hu\/bestfm_128.mp3",
+                "image_url": "https:\/\/mypromotions.sfo2.cdn.digitaloceanspaces.com\/radios\/65681.jpg"
+            },
+            {
+                "name": "Pesti Kabar\u00e9",
+                "uri": "http:\/\/136.243.219.52:8000\/pestikabare",
+                "image_url": "https:\/\/mypromotions.sfo2.cdn.digitaloceanspaces.com\/radios\/22896.jpg"
+            },
+            {
+                "name": "Infor\u00e1di\u00f3",
+                "uri": "http:\/\/stream.infostart.hu\/lejatszo\/stream",
+                "image_url": "https:\/\/mypromotions.sfo2.cdn.digitaloceanspaces.com\/radios\/20043.jpg"
+            },
+            {
+                "name": "SuperDj R\u00e1di\u00f3",
+                "uri": "http:\/\/stream.diazol.hu:35150\/mobil.mp3",
+                "image_url": "https:\/\/mypromotions.sfo2.cdn.digitaloceanspaces.com\/radios\/11524.jpg"
+            },
+            {
+                "name": "Luxfunk Blackmix",
+                "uri": "http:\/\/188.165.11.30:5000\/luxfunkblackmix.mp3",
+                "image_url": "https:\/\/mypromotions.sfo2.cdn.digitaloceanspaces.com\/radios\/63973.jpg"
+            },
+            {
+                "name": "Dance Wave Retro!",
+                "uri": "http:\/\/stream2.dancewave.online:8080\/retrodance.mp3",
+                "image_url": "https:\/\/mypromotions.sfo2.cdn.digitaloceanspaces.com\/radios\/57568.jpg"
+            },
+            {
+                "name": "Rocker R\u00e1di\u00f3",
+                "uri": "http:\/\/stream.diazol.hu:35200\/stream",
+                "image_url": "https:\/\/mypromotions.sfo2.cdn.digitaloceanspaces.com\/radios\/21413.jpg"
+            },
+            {
+                "name": "Sunshine R\u00e1di\u00f3",
+                "uri": "http:\/\/stream.composeit.hu:8100\/sunshine",
+                "image_url": "https:\/\/mypromotions.sfo2.cdn.digitaloceanspaces.com\/radios\/23342.jpg"
+            },
+            {
+                "name": "Laza R\u00e1di\u00f3",
+                "uri": "http:\/\/stream.lazaradio.com\/live.mp3",
+                "image_url": "https:\/\/mypromotions.sfo2.cdn.digitaloceanspaces.com\/radios\/55688.jpg"
+            },
+            {
+                "name": "Radio 88",
+                "uri": "http:\/\/www.radio88.hu\/stream\/radio88.pls",
+                "image_url": "https:\/\/mypromotions.sfo2.cdn.digitaloceanspaces.com\/radios\/7967.jpg"
+            },
+            {
+                "name": "Karc FM",
+                "uri": "http:\/\/hosting.42netmedia.com:13100",
+                "image_url": "https:\/\/mypromotions.sfo2.cdn.digitaloceanspaces.com\/radios\/46489.jpg"
+            },
+            {
+                "name": "N\u00f3ta FM",
+                "uri": "http:\/\/live.notafm.hu:8000\/notafm.mp3",
+                "image_url": "https:\/\/mypromotions.sfo2.cdn.digitaloceanspaces.com\/radios\/53939.jpg"
+            },
+            {
+                "name": "PartFM",
+                "uri": "http:\/\/87.229.53.9:9000\/;stream",
+                "image_url": "https:\/\/mypromotions.sfo2.cdn.digitaloceanspaces.com\/radios\/4191.jpg"
+            },
+            {
+                "name": "Dance Wave!",
+                "uri": "http:\/\/dancewave.hopto.org\/dance.mp3",
+                "image_url": "https:\/\/mypromotions.sfo2.cdn.digitaloceanspaces.com\/radios\/66267.jpg"
+            },
+            {
+                "name": "Dank\u00f3 R\u00e1di\u00f3",
+                "uri": "https:\/\/icast.connectmedia.hu\/4748\/mr7.mp3",
+                "image_url": "https:\/\/mypromotions.sfo2.cdn.digitaloceanspaces.com\/radios\/22079.jpg"
+            },
+            {
+                "name": "Tilos R\u00e1di\u00f3",
+                "uri": "http:\/\/stream.tilos.hu:80\/tilos",
+                "image_url": "https:\/\/mypromotions.sfo2.cdn.digitaloceanspaces.com\/radios\/34728.jpg"
+            },
+            {
+                "name": "Radio Face",
+                "uri": "http:\/\/ca5.rcast.net:8034\/listen.pls",
+                "image_url": "https:\/\/mypromotions.sfo2.cdn.digitaloceanspaces.com\/radios\/29437.jpg"
+            },
+            {
+                "name": "R\u00e1di\u00f3 1 Debrecen",
+                "uri": "http:\/\/91.82.85.44:8080\/debrecenradiofm95",
+                "image_url": "https:\/\/mypromotions.sfo2.cdn.digitaloceanspaces.com\/radios\/60239.jpg"
+            },
+            {
+                "name": "Bart\u00f3k R\u00e1di\u00f3",
+                "uri": "https:\/\/icast.connectmedia.hu\/4741\/mr3.mp3",
+                "image_url": "https:\/\/mypromotions.sfo2.cdn.digitaloceanspaces.com\/radios\/40651.jpg"
+            },
+            {
+                "name": "Klasszik R\u00e1di\u00f3 92.1 FM",
+                "uri": "http:\/\/94.199.183.186\/klasszik.mp3.m3u",
+                "image_url": "https:\/\/mypromotions.sfo2.cdn.digitaloceanspaces.com\/radios\/16579.jpg"
+            },
+            {
+                "name": "Balaton R\u00e1di\u00f3",
+                "uri": "http:\/\/91.82.85.41:8200\/",
+                "image_url": "https:\/\/mypromotions.sfo2.cdn.digitaloceanspaces.com\/radios\/18040.jpg"
+            },
+            {
+                "name": "K\u00e9k Duna R\u00e1di\u00f3 Gold",
+                "uri": "http:\/\/stream5.kekduna.hu:8004\/;stream",
+                "image_url": "https:\/\/mypromotions.sfo2.cdn.digitaloceanspaces.com\/radios\/51052.jpg"
+            },
+            {
+                "name": "Luxfunk Radio",
+                "uri": "http:\/\/188.165.11.30:5000\/luxfunkradio.mp3",
+                "image_url": "https:\/\/mypromotions.sfo2.cdn.digitaloceanspaces.com\/radios\/35488.jpg"
+            },
+            {
+                "name": "COOLFM",
+                "uri": "http:\/\/mediagw.e-tiger.net:8000\/stream\/coolfm",
+                "image_url": "https:\/\/mypromotions.sfo2.cdn.digitaloceanspaces.com\/radios\/63666.jpg"
+            },
+            {
+                "name": "Jazzy Groove",
+                "uri": "http:\/\/streamer.hmx.hu\/jazzy-groove.mp3",
+                "image_url": "https:\/\/mypromotions.sfo2.cdn.digitaloceanspaces.com\/radios\/56129.jpg"
+            },
+            {
+                "name": "Aktiv Radio 92.2 FM",
+                "uri": "http:\/\/aktivradio.hu:8000\/radio.aac",
+                "image_url": "https:\/\/mypromotions.sfo2.cdn.digitaloceanspaces.com\/radios\/10768.jpg"
+            },
+            {
+                "name": "Balatonica",
+                "uri": "http:\/\/www.balatonica.hu:8000\/stream_high",
+                "image_url": "https:\/\/mypromotions.sfo2.cdn.digitaloceanspaces.com\/radios\/46569.jpg"
+            },
+            {
+                "name": "TOP FM Comedy",
+                "uri": "http:\/\/live.topfm.hu:8000\/comedy.mp3",
+                "image_url": "https:\/\/mypromotions.sfo2.cdn.digitaloceanspaces.com\/radios\/24724.jpg"
+            },
+            {
+                "name": "Poptarisznya Oldies",
+                "uri": "http:\/\/stream1.virtualisan.net:8200\/oldies.mp3",
+                "image_url": "https:\/\/mypromotions.sfo2.cdn.digitaloceanspaces.com\/radios\/19812.jpg"
+            },
+            {
+                "name": "Argentine Tango Radio",
+                "uri": "http:\/\/streaming.argentinetangoradio.com:9076\/;",
+                "image_url": "https:\/\/mypromotions.sfo2.cdn.digitaloceanspaces.com\/radios\/2973.jpg"
+            },
+            {
+                "name": "K\u00e9k Duna R\u00e1di\u00f3 Top40",
+                "uri": "http:\/\/stream1.kekduna.hu:7006\/4-top40.mp3",
+                "image_url": "https:\/\/mypromotions.sfo2.cdn.digitaloceanspaces.com\/radios\/15557.jpg"
+            },
+            {
+                "name": "Radio M",
+                "uri": "http:\/\/92.61.114.191:10060\/stream.mp3",
+                "image_url": "https:\/\/mypromotions.sfo2.cdn.digitaloceanspaces.com\/radios\/46279.jpg"
+            },
+            {
+                "name": "RadiOzora Trance",
+                "uri": "http:\/\/trance.out.airtime.pro:8000\/trance_a",
+                "image_url": "https:\/\/mypromotions.sfo2.cdn.digitaloceanspaces.com\/radios\/38874.jpg"
+            },
+            {
+                "name": "Best FM Ny\u00edregyh\u00e1za",
+                "uri": "http:\/\/178.248.200.21:8000\/listen",
+                "image_url": "https:\/\/mypromotions.sfo2.cdn.digitaloceanspaces.com\/radios\/15349.jpg"
+            },
+            {
+                "name": "Spirit FM 87.6",
+                "uri": "https:\/\/stream3.hit.hu:8080\/spirit1",
+                "image_url": "https:\/\/mypromotions.sfo2.cdn.digitaloceanspaces.com\/radios\/9213.jpg"
+            },
+            {
+                "name": "K\u00e9k Duna R\u00e1di\u00f3 Soft",
+                "uri": "http:\/\/stream4.kekduna.hu:8002\/;stream",
+                "image_url": "https:\/\/mypromotions.sfo2.cdn.digitaloceanspaces.com\/radios\/33624.jpg"
+            },
+            {
+                "name": "Trend FM",
+                "uri": "http:\/\/radio.nordtelekom.hu:8000\/gazdasagiradio.m3u",
+                "image_url": "https:\/\/mypromotions.sfo2.cdn.digitaloceanspaces.com\/radios\/56101.jpg"
+            },
+            {
+                "name": "Jazzy Soul",
+                "uri": "http:\/\/94.199.183.186:8000\/jazzy-soul.mp3",
+                "image_url": "https:\/\/mypromotions.sfo2.cdn.digitaloceanspaces.com\/radios\/49909.jpg"
+            },
+            {
+                "name": "Manna FM 98.6",
+                "uri": "http:\/\/icast.connectmedia.hu:80\/4780\/live.mp3",
+                "image_url": "https:\/\/mypromotions.sfo2.cdn.digitaloceanspaces.com\/radios\/18623.jpg"
+            }
+        ],
+        "incomeLevel": "High income",
+        "covidCases": [],
+        "travelLinks": [
+            {
+                "title": "Hungary - CNN Travel Guide | CNN Travel",
+                "url": "https:\/\/www.cnn.com\/travel\/destinations\/hungary",
+                "description": "View CNN's Hungary Travel Guide to explore the best things to do and places to stay, plus get insider tips, watch video and read inspirational narratives."
+            },
+            {
+                "title": "Hungary Travel Guides Travel Directory. Travel in Europe",
+                "url": "http:\/\/travel-language.com\/tl\/travel\/category\/europe\/hungary\/travel_guides",
+                "description": "The Travel and Language Directory provides you access to travel links of all types: Hotel, airline, tourism bureaus, State Tourism offices, worldwide Travel sites. Find airline tickets, country information, tourism info, cheap travel options. Here you can find all Information about Language Schools and Language Courses around the World."
+            },
+            {
+                "title": "Hungary",
+                "url": "http:\/\/web.archive.org\/web\/20200604101432\/https:\/\/www.telegraph.co.uk\/travel\/destinations\/europe\/hungary\/",
+                "description": "Read Telegraph Travel's Hungary guide. Find the best holidays and hotels, recommended things to do, bars and restaurants, plus news, advice and exclusive offers."
+            },
+            {
+                "title": "Hungary Travel Guide | Nationalgeographic",
+                "url": "https:\/\/www.nationalgeographic.com\/travel\/destinations\/europe\/hungary\/",
+                "description": "National Geographics latest travel stories about Hungary"
+            },
+            {
+                "title": "Hungary Travel Guides | U.S. News Travel",
+                "url": "https:\/\/travel.usnews.com\/Destinations\/Europe\/Hungary\/",
+                "description": "Explore the 2 best vacation spots in Hungary with in-depth travel guides. Discover the best things to do, when to visit, where to stay, how to get around, and how to save money."
+            },
+            {
+                "title": "Hungary Travel Guide | Tripsavvy",
+                "url": "https:\/\/www.tripsavvy.com\/hungary-4138923",
+                "description": "This land-locked Eastern European country is known for its capital city of Budapest, its thousand-year-old history, and its public baths."
+            },
+            {
+                "title": "Hungary Attractions: What to do in Hungary | KLM Travel Guide",
+                "url": "https:\/\/www.klm.com\/destinations\/hr\/en\/europe\/hungary",
+                "description": "Book flights to Hungary with KLM and enjoy the nightlife in Budapest, take a dive in Lake Balaton or visit one of the many thermal baths."
+            },
+            {
+                "title": "Hungary Travel Guide - Expert Picks for your Vacation | Fodors Travel",
+                "url": "https:\/\/www.fodors.com\/world\/europe\/hungary",
+                "description": "Get information on Hungary Travel Guide - Expert Picks for your Vacation hotels, restaurants, entertainment, shopping, sightseeing, and activities. Read the Fodor's reviews, or post your own."
+            },
+            {
+                "title": "Hungary Travel Guide outdooractive.com",
+                "url": "https:\/\/www.outdooractive.com\/en\/country\/hungary\/1009922\/",
+                "description": "You can experience many unforgettable outdoor adventures in Hungary. Here is what our travel guide for this great country has in store four you: fascinating tours, exciting stories, great offers, attractions, custom accommodations and cozy huts. Be inspired and get to know Hungary now."
+            },
+            {
+                "title": "Hungary - Matador Network",
+                "url": "https:\/\/matadornetwork.com\/destinations\/europe\/hungary\/",
+                "description": "Matador's travel guide to the world. Find out where to go and the best places to see."
+            }
+        ]
+    },
+    "status": "OK",
+    "statusCode": 200,
+    "success": true
+}

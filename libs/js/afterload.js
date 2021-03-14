@@ -9,21 +9,170 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
         accessToken: 'pk.eyJ1IjoidHV0cmFpZ2VyZ28iLCJhIjoiY2tsaWJnank0MXU0MzJ3cDcxNzhtMTRjdSJ9.NDJrMBXj7_3uu-D1TKCRdw'
     }).addTo(mymap);
 
-const countrySelectorChange=(e)=>{
-    console.log(e.target)
-}
+let $info=('#info')
+let infoDiv=document.querySelector('#info')
+
+let radioList;
+let audio=document.createElement('audio')
+audio.controls=true
+let currencyRate;
+let currentPoly;
+    const countrySelectorChange=(e)=>{
+       //$info.toggle() 
+       typeof currentPoly=="undefined"? console.log('nothing to do'):mymap.removeLayer(currentPoly)
+       $('#result').show( "bounce", { times: 2 }, 200 )
+       infoDiv.innerHTML='<img src="./loading.gif" style="display:inline-block">'
+        console.log(e.target.value)
+        
+        let countryCode=e.target.value
+        $.ajax({
+            url : 'libs/php/summary2.php',
+            type: 'POST',
+            dataType: 'json',
+            data:{
+                countryCode
+            },success:(res)=>{
+                let data=res.data
+                infoDiv.innerHTML=''
+
+        console.log(data)
+        let pdiv=document.createElement('div')
+        let h1=document.createElement('h1')
+        h1.class='display-1'
+        h1.innerHTML=data.name
+        pdiv.appendChild(h1)
+        infoDiv.appendChild(pdiv)
+        pdiv=document.createElement('div')
+        let list=document.createElement('ul')
+        let li=document.createElement('li')
+        li=document.createElement('li')
+                
+        li.innerHTML=`Country Code: <strong>${data.countryCode}</strong>`
+        list.appendChild(li)
+
+        
+        
+        li=document.createElement('li')
+        li.innerHTML=`Country's capital is <strong> ${data.capital.name}</strong>`
+        list.appendChild(li)
+        li=document.createElement('li')
+        li.innerHTML=`Country's currency:<strong> ${data.currency}</strong>`
+        list.appendChild(li)
+        li=document.createElement('li')
+        li.innerHTML=`Country's income level:<strong> ${data.incomeLevel}</strong>`
+        list.appendChild(li)
+        li=document.createElement('li')
+        li.innerHTML=`temperature now: <strong>${data.temperature} C</strong>`
+        list.appendChild(li)
+        li=document.createElement('li')
+        li.innerHTML=`Country population:<strong> ${data.population}</strong>`
+        list.appendChild(li)
+        li=document.createElement('li')
+        li.innerHTML=`Total COVID-19 cases:<strong> ${data.covidCases}</strong>`
+        list.appendChild(li)
+        
+        
+
+        li=document.createElement('li')
+        li.innerHTML=`flag: <img width="50" height="30" src=${data.flag}>`
+        list.appendChild(li)
+        infoDiv.appendChild(list)
+        let select=document.createElement('select')
+        select.id='chSelector'
+        radioList=data.radios
+        if(radioList.length!==0){
+        radioList.forEach((radio,key)=>{
+            let option=document.createElement('option')
+            option.value=key
+            option.innerHTML=`#${key+1}: ${radio.name}`
+            select.appendChild(option)
+        })
+        h1=document.createElement('h1')
+        h1.innerHTML='TOP 50 radio channels'
+        infoDiv.appendChild(h1)
+       
+        infoDiv.appendChild(select)
+        
+        let source=document.createElement('source')
+        source.src=radioList[select.value].uri
+        audio.appendChild(source)
+
+        
+
+        infoDiv.appendChild(audio)
+    }
+        currentPoly=L.geoJSON(data.geometry)
+        currentPoly.addTo(mymap)
+        mymap.flyToBounds(currentPoly)
+        
+        h1=document.createElement('h1')
+        h1.innerHTML='Travel guides'
+        infoDiv.appendChild(h1)
+
+        let travelLinks=document.createElement('ul')
+        data.travelLinks.forEach((link)=>{
+            let li=document.createElement('li')
+            let a=document.createElement('a')
+            a.innerHTML=link.title
+            a.href=link.url
+            li.appendChild(a)
+            travelLinks.appendChild(li)
+        })
+        infoDiv.appendChild(travelLinks)
+        
+
+        currencyRate=data.exchangeRate
+        let currencyDiv='<div id="currency"><input id=\"usd\" type=\"number\" step=\"0.01\" value=1><label for=\"usd\"></label></div>'
+        infoDiv.innerHTML+=currencyDiv
+
+        let usd=document.querySelector('#usd')
+        let label=document.querySelector('#currency>label')
+        label.innerHTML=`USD is ${Math.floor(usd.value*currencyRate*100)/100} ${data.currency}`
+        usd.addEventListener('change',(e)=>{
+            let label=document.querySelector('#currency>label')
+            
+            label.innerHTML=`USD is ${Math.floor(e.target.value*currencyRate*100)/100} ${data.currency}`
+        })
+
+
+
+        
+        infoDiv.innerHTML+='<button class=\"btn btn-danger mt-3 mb-2\"id=\"close\">Close</button>'
+
+        document.querySelector('#close').addEventListener('click',(e)=>{
+            $('#result').hide( "bounce", { times: 2 }, 200 );})
+
+            let audioSelect=document.querySelector('#chSelector')
+            audioSelect.addEventListener('change',(event)=>{
+                let source=document.querySelector('source')
+                console.log(source)
+                let audio=document.querySelector('audio')
+                source.src=radioList[event.target.value].uri
+                audio.load()
+                audio.play()})
+            },
+            error:(err)=>{
+                console.log(err)
+            }
+
+            
+        })}
+
+        
+        
+
+
 
 let countrySelector=$('#country')
 
-countrySelector.on('change',(event)=>{
-    let current=event.target.options[event.target.selectedIndex]
-    mymap.setView([current.getAttribute('lat'),current.getAttribute('lng')],5)
+countrySelector.on('change',countrySelectorChange)/*(event)=>{
+    
     clickHandler(event,current.getAttribute('lat'),current.getAttribute('lng'),current.getAttribute('data-index'))
     console.log(currentPoly)
     typeof currentPoly=="undefined"? console.log('nothing to do'):mymap.removeLayer(currentPoly)
 
     console.log(current)
-})
+})*/
 
 //countrySelector.on('change',countrySelectorChange)
 //console.log(countrySelector.onchange)
@@ -65,7 +214,7 @@ const clickHandlerWrapper=(e)=>{
 }
 
 
-let currentPoly
+
 
 
 
@@ -73,32 +222,23 @@ $.ajax({ url : 'libs/php/init.php',
 type: 'POST',
 dataType: 'json',
 success: (res)=>{
-    let features=res.features
-    features.forEach((feature,key) => {
+    let countries=res.data
+    countries.forEach((country) => {
         let select=document.querySelector('#country')
         let option=document.createElement('option')
-        let {lat,lng}=L.geoJSON(feature).getBounds().getCenter()
         
-        lat=Math.floor(lat*10000)/10000
-        lng=Math.floor(lng*10000)/10000
-
-        option.setAttribute('lat',lat)
-        option.setAttribute('lng',lng)
-        option.setAttribute('data-index',key)
-        option.innerHTML=feature.properties.name
+        
+        option.value=country.code
+        option.innerHTML=country.name
         select.appendChild(option)
 
-       // L.geoJSON(feature).addEventListener('click',clickHandlerWrapper).addTo(mymap)
-
-        
-       console.log(lat,lng)
     });
 },
 error:(err)=>{console.log(err)}
 
 })
 
-    const clickHandler=(e,lat,lng,dataIndex)=>{
+   /* const clickHandler=(e,lat,lng,dataIndex)=>{
         //console.log('asd')
         
         let infoDiv=document.querySelector('#info')
@@ -167,14 +307,13 @@ error:(err)=>{console.log(err)}
                 h1.class="display-6 text-red"
                 h1.innerHTML="Error happened!"
             }})
-    }
+    }*/
 
    // $('#result').show( "shake", { times: 2 }, 150);
-    document.querySelector('#close').addEventListener('click',(e)=>{
-        $('#result').hide( "bounce", { times: 2 }, 200 );
+   
         
         
-    })
+
 
 
 

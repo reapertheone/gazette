@@ -26,15 +26,14 @@
 </select></div>
 
 <div id="result" style="display:none" class="container-fluid hidden text-dark">
+
 <div class="row">
         <div class="col"></div>
-        <div id="info" class="text-center col-8 col-xs-8 col-sm-8 col-md-8 col-lg-8 col-xl-6 bg-light shadow">
-            <img src="./loading.gif" style="display:none">
-            <h1 class="display-3 text-center">United Kingdom</h1>
+        <div id="info" class="text-center col-6 col-xs-8 col-sm-8 col-md-6 col-lg-6 col-xl-6 bg-light shadow">
+            <img src="./loading.gif" style="display:inline-block">
+            <h1 class="display-3 text-center"></h1>
             <ul class="text-left">
-                <li>Currency:GBP</li>
-                <li>Exchange rate to USD:<strong>£0.68</strong></li>
-                <li>Neighbours:<strong>Ireland</strong>,<strong>France</strong></li>
+                
             </ul>
             <div class="container text-center">
             <button class="mb-3 btn btn-danger" id="close">Close</button>
@@ -42,6 +41,8 @@
         </div>
         <div class="col"></div>
     </div>
+
+    
 </div>
 
 
