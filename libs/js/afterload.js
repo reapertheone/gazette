@@ -70,6 +70,9 @@ let currentPoly;
         li=document.createElement('li')
         li.innerHTML=`Total COVID-19 cases:<strong> ${data.covidCases}</strong>`
         list.appendChild(li)
+        li=document.createElement('li')
+        li.innerHTML=`Wikipedia link:<strong> ${data.wiki}</strong>`
+        list.appendChild(li)
         
         
 
