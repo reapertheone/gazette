@@ -106,7 +106,7 @@ $url="https://api.openweathermap.org/data/2.5/weather?units=metric&q=" . $data['
     $data['wiki']=$decode[3][0];
 
 
-    
+/*    
 // radio dont forget to uncomment
     $curl = curl_init();
 
@@ -131,13 +131,18 @@ $response = curl_exec($curl);
 curl_close($curl);
 
 $decode=json_decode($response,true);
+*/
+
+$response=file_get_contents("http://91.132.145.114/json/stations/bycountrycodeexact/".$data['countryCode']);
+
+$decode=json_decode($response,true);
 
 $radiores=[];
 
-foreach($decode['radios'] as $radio){
+foreach($decode as $radio){
     $station['name']=$radio['name'];
-    $station['uri']=$radio['uri'];
-    $station['image_url']=$radio['image_url'];
+    $station['url']=$radio['url_resolved'];
+    
     array_push($radiores,$station);
 }
 

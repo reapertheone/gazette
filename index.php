@@ -29,7 +29,7 @@
 
 <div class="row">
         <div class="col"></div>
-        <div id="info" class="text-center col-6 col-xs-8 col-sm-8 col-md-6 col-lg-6 col-xl-6 bg-light shadow">
+        <div id="info" class="text-center col-xs-12 col-sm-12 col-md-6 col-lg-6 col-xl-6 bg-light shadow">
             <img src="./loading.gif" style="display:inline-block">
             <h1 class="display-3 text-center"></h1>
             <ul class="text-left">

@@ -36,48 +36,49 @@ let currentPoly;
                 infoDiv.innerHTML=''
 
         console.log(data)
-        let pdiv=document.createElement('div')
+        
         let h1=document.createElement('h1')
         h1.class='display-1'
         h1.innerHTML=data.name
-        pdiv.appendChild(h1)
-        infoDiv.appendChild(pdiv)
+        infoDiv.appendChild(h1)
+        
         pdiv=document.createElement('div')
         let list=document.createElement('ul')
         let li=document.createElement('li')
         li=document.createElement('li')
                 
-        li.innerHTML=`Country Code: <strong>${data.countryCode}</strong>`
+        li.innerHTML=`Country Code:<br><strong>${data.countryCode}</strong>`
         list.appendChild(li)
 
         
         
         li=document.createElement('li')
-        li.innerHTML=`Country's capital is <strong> ${data.capital.name}</strong>`
+        li.innerHTML=`Country's capital is:<br><strong> ${data.capital.name}</strong>`
         list.appendChild(li)
         li=document.createElement('li')
-        li.innerHTML=`Country's currency:<strong> ${data.currency}</strong>`
+        li.innerHTML=`Country's currency:<br><strong> ${data.currency}</strong>`
         list.appendChild(li)
         li=document.createElement('li')
-        li.innerHTML=`Country's income level:<strong> ${data.incomeLevel}</strong>`
+        li.innerHTML=`Country's income level:<br><strong> ${data.incomeLevel}</strong>`
         list.appendChild(li)
         li=document.createElement('li')
-        li.innerHTML=`temperature now: <strong>${data.temperature} C</strong>`
+        li.innerHTML=`temperature now:<br><strong>${data.temperature} C</strong>`
         list.appendChild(li)
         li=document.createElement('li')
-        li.innerHTML=`Country population:<strong> ${data.population}</strong>`
+        li.innerHTML=`Country population:<br><strong> ${data.population}</strong>`
         list.appendChild(li)
         li=document.createElement('li')
-        li.innerHTML=`Total COVID-19 cases:<strong> ${data.covidCases}</strong>`
+        li.innerHTML=`Total COVID-19 cases:<br><strong> ${data.covidCases}</strong>`
         list.appendChild(li)
+
         li=document.createElement('li')
-        li.innerHTML=`Wikipedia link:<strong> ${data.wiki}</strong>`
+        li.innerHTML=`<a href=\"${data.wiki}\">Wikipedia</a>`
         list.appendChild(li)
         
         
 
         li=document.createElement('li')
-        li.innerHTML=`flag: <img width="50" height="30" src=${data.flag}>`
+        li.innerHTML=`flag:<br> <img width="50" height="30" src=${data.flag}>`
         list.appendChild(li)
         infoDiv.appendChild(list)
         let select=document.createElement('select')
@@ -87,18 +88,18 @@ let currentPoly;
         radioList.forEach((radio,key)=>{
             let option=document.createElement('option')
             option.value=key
-            option.innerHTML=`#${key+1}: ${radio.name}`
+            option.innerHTML=`${radio.name}`
             select.appendChild(option)
         })
         h1=document.createElement('h1')
-        h1.innerHTML='TOP 50 radio channels'
+        h1.innerHTML=`${data.name}'s radio channels`
         infoDiv.appendChild(h1)
        
         infoDiv.appendChild(select)
         infoDiv.innerHTML+='<br>'
         
         let source=document.createElement('source')
-        source.src=radioList[select.value].uri
+        source.src=radioList[select.value].url
         audio.appendChild(source)
 
         
@@ -116,8 +117,9 @@ let currentPoly;
         let travelLinks=document.createElement('ul')
         data.travelLinks.forEach((link)=>{
             let li=document.createElement('li')
+    
             let a=document.createElement('a')
-            a.innerHTML=link.title
+            a.innerHTML=`${link.title}<br>`
             a.href=link.url
             li.appendChild(a)
             travelLinks.appendChild(li)
@@ -132,11 +134,8 @@ let currentPoly;
         let usd=document.querySelector('#usd')
         let label=document.querySelector('#currency>label')
         label.innerHTML=`USD is ${Math.floor(usd.value*currencyRate*100)/100} ${data.currency}`
-        usd.addEventListener('change',(e)=>{
-            let label=document.querySelector('#currency>label')
-            
-            label.innerHTML=`USD is ${Math.floor(e.target.value*currencyRate*100)/100} ${data.currency}`
-        })
+        console.log(label)
+        
 
 
 
@@ -151,9 +150,16 @@ let currentPoly;
                 let source=document.querySelector('source')
                 console.log(source)
                 let audio=document.querySelector('audio')
-                source.src=radioList[event.target.value].uri
+                source.src=radioList[event.target.value].url
                 audio.load()
                 audio.play()})
+                usd=$('#usd')
+                usd.on('change',(e)=>{
+                    //   let label=document.querySelector('#currency>label')
+                        label=document.querySelector('#currency>label')
+                       console.log(label)
+                       label.innerHTML=`USD is ${Math.floor(e.target.value*currencyRate*100)/100} ${data.currency}`
+                   })
             },
             error:(err)=>{
                 console.log(err)

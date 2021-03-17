@@ -26,6 +26,7 @@ body{
 
 ul{
     list-style-type: none;
+    padding-left:0;
 }
 
 
@@ -35,6 +36,21 @@ ul{
 
 #result{
     position:absolute;
-    top:3%;
+    top:5%;
     z-index:101;
+    max-height: 90vh;
+    overflow:auto;
+    
+    
+}
+
+
+
+
+#chSelector{
+    width:100%;
+}
+
+audio{
+    width:100%;
 }
