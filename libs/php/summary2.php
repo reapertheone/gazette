@@ -1,6 +1,6 @@
 <?php
 
-
+$executionStartTime = microtime(true);
 
 $data['countryCode']=$_REQUEST['countryCode'];
 
@@ -182,11 +182,13 @@ $url="http://api.worldbank.org/v2/country/".$data['countryCode']."?format=json";
 
     $decode= json_decode($result,true);
     
-    $temp=0;
+    $temp=[];
     if($decode!=null){
     foreach($decode['Countries'] as $record){
         if($data['countryCode']==$record['CountryCode']){
-            $temp=$record['TotalConfirmed'];
+            $temp['Total']=$record['TotalConfirmed'];
+            $temp['Deaths']=$record['TotalDeaths'];
+            $temp['Recovered']=$record['TotalRecovered'];
             //echo $temp;
         }
         
@@ -245,9 +247,55 @@ array_push($searchRes,$tmp);
 $data['travelLinks']=$searchRes;
 
 
+
+
+$decode=json_decode(file_get_contents("http://api.geonames.org/countryInfoJSON?formatted=true&lang=it&country=".$data['countryCode']."&username=gergo&style=full"),true);
+//print_r($decode['geonames'][0]['bbox']);
+$data['bounds']['north']=$decode['geonames'][0]['north'];
+$data['bounds']['east']=$decode['geonames'][0]['east'];
+$data['bounds']['west']=$decode['geonames'][0]['west'];
+$data['bounds']['south']=$decode['geonames'][0]['south'];
+//print_r($data['bounds']);
+
+
+$decode=json_decode(file_get_contents("http://api.geonames.org/earthquakesJSON?formatted=true&north=".$data['bounds']['north']."&south=".$data['bounds']['south']."&east=".$data['bounds']['east']."&west=".$data['bounds']['west']."&username=gergo&style=full"),true);
+
+//print_r($decode['earthquakes']);
+
+$data['earthquakes']=$decode['earthquakes'];
+
+
+$decode=json_decode(file_get_contents("http://api.geonames.org/wikipediaBoundingBoxJSON?formatted=true&north=".$data['bounds']['north']."&south=".$data['bounds']['south']."&east=".$data['bounds']['east']."&west=".$data['bounds']['west']."&username=gergo&style=full"),true);
+
+//print_r($decode);
+
+$wiki_results=[];
+
+//print_r($decode['geonames']);
+
+
+foreach($decode['geonames'] as $result){
+    $temporary['title']=$result['title'];
+    $temporary['lat']=$result['lat'];
+    $temporary['lng']=$result['lng'];
+    
+    $temporary['img']='wiki.ico';
+    
+    $temporary['wiki']='https:\/\/'.$result['wikipediaUrl'];
+    $temporary['sum']=$result['summary'];
+
+
+    array_push($wiki_results,$temporary);
+    
+}
+
+$data['wikiResults']=$wiki_results;
+
+$data['executedIn'] = intval((microtime(true) - $executionStartTime) * 1000) . " ms";
 $output['data']=$data;
 $output['status']='OK';
 $output['statusCode']=200;
 $output['success']=True;
 echo json_encode($output);
+
 ?>

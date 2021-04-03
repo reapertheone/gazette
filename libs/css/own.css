@@ -24,6 +24,15 @@ body{
     z-index:1;
 }
 
+.active{
+    display:block;
+    
+}
+
+.inactive{
+    display:none;
+}
+
 ul{
     list-style-type: none;
     padding-left:0;
@@ -44,13 +53,152 @@ ul{
     
 }
 
-
-
-
-#chSelector{
+#audioSelector{
     width:100%;
 }
 
 audio{
     width:100%;
+    
 }
+
+#audio-modal{
+    display:block;
+    left:0;
+    right:0;
+    margin-left: auto;
+    margin-right: auto;
+    width:50%;
+    bottom:20%;
+    top:auto;
+}
+
+
+#ui{
+    height:auto;
+    bottom:0;
+    position:absolute;
+    z-index:101;
+    background-color:rgba(0, 0, 0, 0.26);
+    padding:0;
+}
+
+#menu{
+    
+    width:100%;
+    padding:0;
+    margin:0;
+}
+
+#menu>div{
+    background-color:white;
+    width: 50px;
+    height:3rem;
+    margin-top:5px;
+    margin-left:10px;
+    border-radius:50px;
+    display:inline-block;
+    cursor:pointer;
+    box-shadow: 2px 2px 3px black;
+}
+
+.info-box{
+    position: absolute;
+    top:10vh;
+    left:0;
+    right:0;
+    height:auto;
+    max-height:70vh;
+    overflow:auto;
+    width:auto;
+    max-width:80vw;
+    margin-top:auto;
+    margin-bottom:auto;
+    margin-left:auto;
+    margin-right:auto;
+    padding: 0;
+
+    z-index:101;
+    background-color:rgba(0, 0, 0, 0.5);
+    color:white;
+    
+    
+    
+    
+}
+
+td{
+    max-width: 50px;
+}
+
+input{
+    max-width:100%;
+}
+
+.loading{
+    top:30%;
+    position:absolute;
+    z-index:999;
+    background-color: rgba(255, 255, 255, 0.521);
+}
+
+
+.mod{
+    display:none;
+}
+
+
+.left,.right{
+    display:inline-block;
+    max-width: 45%;
+    background-color: black;
+}
+
+.left{
+    float:left;
+}
+.right{
+    float:right;
+}
+
+
+#general{
+    background-image: url(../../info.png);
+    background-size: contain;
+    background-color:white;
+    background-position: 1px;
+}
+
+#audio{
+    background-image: url(../../play1.png);
+    background-size: contain;
+    background-color:white;
+    background-position: 1px;
+}
+
+#links{
+    background-image: url(../../wiki.ico);
+    background-size: contain;
+    background-color:white;
+    background-position: 1px;
+}
+
+#financial{
+    background-image: url(../../dollar1.png);
+    background-size: contain;
+    background-color:white;
+    background-position: 3px;
+}
+#covid{
+    background-image: url(../../covid.svg);
+    background-size: contain;
+    background-color:white;
+    background-position: 1px;
+}
+
+#wikihelper{
+    top:70vh;
+    height:20vh;
+    
+}
+

@@ -9,6 +9,8 @@ L.tileLayer('https://api.mapbox.com/styles/v1/{id}/tiles/{z}/{x}/{y}?access_toke
         accessToken: 'pk.eyJ1IjoidHV0cmFpZ2VyZ28iLCJhIjoiY2tsaWJnank0MXU0MzJ3cDcxNzhtMTRjdSJ9.NDJrMBXj7_3uu-D1TKCRdw'
     }).addTo(mymap);
 
+mymap.setView([0,0],1)
+
 let $info=('#info')
 let infoDiv=document.querySelector('#info')
 
@@ -182,29 +184,56 @@ countrySelector.on('change',countrySelectorChange)/*(event)=>{
     typeof currentPoly=="undefined"? console.log('nothing to do'):mymap.removeLayer(currentPoly)
 
     console.log(current)
-})*/
+})
 
 //countrySelector.on('change',countrySelectorChange)
 //console.log(countrySelector.onchange)
 
 
 
-
+let lat
+let lng
 let locations=[]
 window.navigator.geolocation.getCurrentPosition((value)=>{
-    const {latitude,longitude}=value.coords
+    lat=value.coords.latitude
+    lng=value.coords.longitude
+    
 
    // console.log(latitude,longitude)
 
-    mymap.setView([latitude,longitude], 5)
+    mymap.setView([lat,lng], 5)
     
 
-    let marker1=L.marker([latitude,longitude],{icon:new L.Icon({iconUrl:'thunder.png',iconSize:[38,50]})})
+    let marker1=L.marker([lat,lng],{icon:new L.Icon({iconUrl:'thunder.png',iconSize:[38,50]})})
 
-    marker1.addTo(mymap)
+    marker1.addTo(mymap).addEventListener('click',(e)=>{console.log(e)})
+
+    $.ajax({ url : url=`libs/php/init.php?lat=${lat}&lng=${lng}`,
+type: 'POST',
+dataType: 'json',
+success: (res)=>{
+    let countries=res.data
+    countries.forEach((country) => {
+        let select=document.querySelector('#country')
+        let option=document.createElement('option')
+        
+        
+        option.value=country.code
+        option.innerHTML=country.name
+        option.value==='GB'?option.selected=true:option.selected=false
+        select.appendChild(option)
+
+    });
+},
+error:(err)=>{console.log(err)}
+
+})
+
+
 },(err)=>{
     console.log(err.message)
-
+    lat=0
+    lng=0
     mymap.setView([0,1], 2);
 
    
@@ -225,10 +254,10 @@ const clickHandlerWrapper=(e)=>{
 
 
 
+let url
 
 
-
-$.ajax({ url : 'libs/php/init.php',
+$.ajax({ url : url=lat>0?`libs/php/init.php`:`libs/php/init.php?lat=${lat}&lng=${lng}`,
 type: 'POST',
 dataType: 'json',
 success: (res)=>{
@@ -240,6 +269,7 @@ success: (res)=>{
         
         option.value=country.code
         option.innerHTML=country.name
+        option.value==='GB'?option.selected=true:option.selected=false
         select.appendChild(option)
 
     });
@@ -317,7 +347,7 @@ error:(err)=>{console.log(err)}
                 h1.class="display-6 text-red"
                 h1.innerHTML="Error happened!"
             }})
-    }*/
+    }
 
    // $('#result').show( "shake", { times: 2 }, 150);
    
@@ -336,3 +366,5 @@ error:(err)=>{console.log(err)}
     
 
    // L.geoJSON(feature).getBounds().getCenter()
+
+   */
