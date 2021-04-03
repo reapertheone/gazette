@@ -143,7 +143,7 @@ let modals=$('.mod').hide()
 
 
 
-$('#covid-modal').show()
+
 
 let currencyRate
 
