@@ -109,6 +109,7 @@ btn.addEventListener('click',(e)=>{
 
 let pubData;
 function getAllData(countryCode){
+    $('.loading').show()
     $.ajax({
         url: './libs/php/summary2.php',
         method:'POST',
