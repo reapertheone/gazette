@@ -5,12 +5,11 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link       rel="stylesheet" href="./libs/vendor/leaflet.css"
-                integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
-                crossorigin=""/>
+   
                 <script src="./libs/js/jquery-2.2.3.min.js"></script>
     <script src="./libs/js/bootstrap.min.js"></script>
-    <script src="./libs/vendor/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="/libs/vendor/leaflet.css" />
+    <script src="/libs/vendor/leaflet.js"></script>
     
 
     <link rel="stylesheet" href="./libs/css/bootstrap.min.css"/>
