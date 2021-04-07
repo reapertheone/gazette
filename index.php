@@ -5,12 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link       rel="stylesheet" href="https://unpkg.com/leaflet@1.7.1/dist/leaflet.css"
+    <link       rel="stylesheet" href="./libs/vendor/leaflet.css"
                 integrity="sha512-xodZBNTC5n17Xt2atTPuE1HxjVMSvLVW9ocqUKLsCC5CXdbqCmblAshOMAS6/keqq/sMZMZ19scR4PsZChSR7A=="
                 crossorigin=""/>
                 <script src="./libs/js/jquery-2.2.3.min.js"></script>
     <script src="./libs/js/bootstrap.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/leaflet/1.7.1/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin="anonymous"></script>
+    <script src="./libs/vendor/leaflet.js" integrity="sha512-XQoYMqMTK8LvdxXYG3nZ448hOEQiglfqkJs1NOQV44cWnUrBc8PkAOcXy20w0vlaXaVUearIOBhiXZ5V3ynxwA==" crossorigin="anonymous"></script>
     
 
     <link rel="stylesheet" href="./libs/css/bootstrap.min.css"/>
@@ -22,7 +22,7 @@
 </head>
 <body>
 
-<div id="selector"><select class="shadow" id="country">
+<div id="selector"><select class="shadow form-control" id="country">
     <option value="none">Choose one</option>
 </select></div>
 
@@ -51,7 +51,7 @@
 <audio controls>
     <source src="">
 </audio>
-<select id="audioSelector">
+<select class="form-control" id="audioSelector">
     <option value="none">Choose one</option>
 </select>
 
@@ -93,7 +93,7 @@
     </thead>
     <tbody>
         <tr>
-            <td><input id="amount" type="number" step="0.01" placeholder="12.12"></td>
+            <td><input id="amount" class="form-control" type="number" step="0.01" placeholder="12.12"></td>
             <td>USD</td>
             <td>==</td>
             <td>0</td>
